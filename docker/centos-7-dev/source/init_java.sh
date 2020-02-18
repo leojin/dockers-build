@@ -2,9 +2,10 @@
 
 # JENV
 git clone https://github.com/gcuisinier/jenv.git ~/.jenv
-echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(jenv init -)"' >> ~/.bash_profile
-source ~/.bash_profile
+echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(jenv init -)"' >> ~/.bashrc
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # JDK 11
 yum install -y java-11-openjdk*

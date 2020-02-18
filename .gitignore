@@ -1,3 +1,9 @@
 # IDE
 
 .idea
+
+# Mac
+.DS_Store
+
+# Project
+output

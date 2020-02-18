@@ -3,10 +3,7 @@
 PATH_ROOT=$(cd "$(dirname "$0")" && pwd)
 
 DOCKER_IMAGES=(
-    "mysql"
-    "elasticsearch-head"
-    "elasticsearch"
-    "server"
+    "centos-7-dev"
 )
 
 function entry_help() {
@@ -52,13 +49,13 @@ function entry_build_image() {
 
     echo "building image personal/$imageName:$imageVersion"
     docker build \
-        --rm=false \
+        --rm=true \
         -t "personal/${imageName}:${imageVersion}" \
         . || return 1
 
     if [[ "X${imageOutput}" != "X" ]]; then
         echo "exporting image personal/$imageName:$imageVersion"
-        docker save "intention/${imageName}:${imageVersion}" -o "${imageOutput}/intention-${imageName}.image"
+        docker save "personal/${imageName}:${imageVersion}" -o "${imageOutput}/personal-${imageName}-${imageVersion}.image"
     fi
 
     return 0
