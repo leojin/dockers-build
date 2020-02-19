@@ -68,8 +68,6 @@ function entry_build_all() {
 
     mkdir -p output/images
 
-    cp -r "${PATH_ROOT}/scripts/"* "${PATH_ROOT}/output/"
-
     for imageName in ${DOCKER_IMAGES[*]}; do
         entry_build_image "${imageName}" "${PATH_ROOT}/output/images"
     done
